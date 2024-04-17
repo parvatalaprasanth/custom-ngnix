@@ -1,0 +1,30 @@
+RemoteIPProxyProtcol on (ngnix)
+
+turn on HTTP keep-alive in webserver for ec2, so LB uses it
+        - in ngix
+
+https://gcore.com/learning/nginx-for-ddos-protection/
+
+can handle 10000 req/sec
+performance hign concurrency low-memory
+Can receive 1000s of requests on single thread
+
+
+disable HEAD and OPTIONS
+allow only GET, PUT, POST, PATCH, DELETE
+
+worker_processes - auto sleect best for number cores - auto detect
+master process ID - pid
+
+everything in conf file is main context
+
+include /etc/nginx/conf.d/*.conf; -> load all conf files in that dir
+
+support multiple websites but not recommended
+
+block access to files
+
+access and error log -> alarm on error log
+
+add http2 module and geoip
+
